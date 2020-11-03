@@ -14,7 +14,7 @@ else{
 my $count;
 my $t1=0;#last time
 my $t2;  #current time
-my $x;   #last rection
+my $x;   #last description
 my $y='Leasson';
 my %hash = ();
 open(my $ln,'<', $file) or die $!;
