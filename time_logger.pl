@@ -18,14 +18,13 @@ my $x;   #last description
 my $y='Lesson';
 my %hash = ();
 open(my $ln,'<', $file) or die $!;
-while (<$ln>) {
+while (<$ln>) { #loop until end of file
     if ($_=~/^$/)
     {
         $t1=0;
         $x='';
         next;
     }
-
     if ($t1==0)
     {
         $t1=$1 if $_=~/([0-9]*:[0-9]*)/;
