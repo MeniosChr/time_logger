@@ -19,24 +19,23 @@ my $y='Lesson';
 my %hash = ();
 open(my $ln,'<', $file) or die $!;
 while (<$ln>) {
-    #print $_;
     if ($_=~/^$/)
     {
         $t1=0;
         $x='';
         next;
     }
-    
+
     if ($t1==0)
     {
         $t1=$1 if $_=~/([0-9]*:[0-9]*)/;
-        $t1=Time::Piece->strptime( $t1, '%H:%M' ); 
+        $t1=Time::Piece->strptime( $t1, '%H:%M' );
         $x = $1 if($_=~/([a-z]+[^\n])/i);
     }
     else
     {
         $t2=$1 if ($_=~/([0-9]*:[0-9]*)/);
-        $t2=Time::Piece->strptime( $t2, '%H:%M' );            
+        $t2=Time::Piece->strptime( $t2, '%H:%M' );
         if ($x=~/(Break)/i)
         {
             $count = $t2-$t1;
@@ -53,7 +52,7 @@ while (<$ln>) {
             $hash{$y}+=$count/60;
         }
         $t1=$1 if $_=~/([0-9]*:[0-9]*)/;
-        $t1=Time::Piece->strptime( $t1, '%H:%M' ); 
+        $t1=Time::Piece->strptime( $t1, '%H:%M' );
         $x = $1 if($_=~/([a-z]+[^\n])/i);
     }
 }
