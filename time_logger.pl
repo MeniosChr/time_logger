@@ -44,6 +44,7 @@ while (<$ln>) { #loop until end of file
         {
             $count = $t2-$t1;
             $hash{$x}+=$count/60;
+
          }
         else
         {
