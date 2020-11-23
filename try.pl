@@ -3,4 +3,6 @@
 use 5.18.0;
 use warnings;
 
-print "Hello World";
+say "Hello World";
+say 44+44;
+say "nice";
